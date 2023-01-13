@@ -1,5 +1,4 @@
 # GeographicInfoSystem
-Algorithms Final Project
 
 ## Compilation Instructions
 To compile, ensure you have “Make” installed, alongside C++ version 20 and g++
