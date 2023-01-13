@@ -1,7 +1,7 @@
 # GeographicInfoSystem
 Algorithms Final Project
 
-##Compilation Instructions
+## Compilation Instructions
 To compile, ensure you have “Make” installed, alongside C++ version 20 and g++
 Open a terminal by the GIS.cpp file, and type “make run”.
 The appropriate files will be compiled via g++ using C++ version 20. 
@@ -12,7 +12,7 @@ The script file, argument #2, needs to exist next to the executable, or within a
 When invoking the program, it will only run if the 3 arguments are provided. Otherwise, it will terminate. 
 
 
-##Solution Description
+## Solution Description
 This solution was primarily built and tested through Visual Studio Community 2022, and utilizes C++ 20. A simple Make file exists next to the project main file that builds the project via G++ (on C++ 20), which can be executed with “make run”. It will remove any instance of the compiled code, and recompile it to generate a new executable. 
 The program assumes that you would have specified a database file name, a script file, and a log file name. If none of these parameters are provided, the program will not run.
 Any database files used for importing records must be located either next to the program main file (GIS.cpp), or within a folder called “Data”, next to the main file. This was done for organizational purposes, so that the main folder would not be cluttered.
@@ -24,7 +24,7 @@ In regards to the world boundaries, this solution assumes that coordinates falli
 The log file that is produced from the solution will display the decimal versions of longitude and latitude, stored in floating point values. Additionally, no debug statement will visually display the world generated and maintained by the program. Any offsets shown in the log file will also pertain to that records position in the Database file maintained by the program. However, internally the offset used to read/write records is different, so as to improve read/write times via C++ functions.
 Lastly, records from the buffer pool are displayed from least used record to most used record. The reason for this is to prevent redundant reading from a list, as records are stored as a list within the buffer pool, and is being read using a for loop that allows access to each element from lowest to highest entry in the list.
 
-##General Code Architecture 
+## General Code Architecture 
 The following diagram provides an overview of the relationship between classes:
 ![GIS_Arch](GIS_Architecture.png)
 As noted in the diagram, the FileManager is a singleton. As such, every class can access it. This is heavily utilized to access various data structures across the project, and execute utility functions such as conversions from DMS to DEC. 
